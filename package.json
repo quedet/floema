@@ -7,6 +7,7 @@
     "@babel/core": "^7.16.0",
     "@babel/preset-env": "^7.16.4",
     "babel-loader": "^8.2.3",
+    "concurrently": "^6.4.0",
     "copy-webpack-plugin": "^10.1.0",
     "css-loader": "^6.5.1",
     "file-loader": "^6.2.0",
@@ -25,6 +26,13 @@
   },
   "scripts": {
     "build": "webpack --progress --config webpack.config.build.js",
-    "watch": "webpack --progress --config webpack.config.dev.js --watch"
+    "watch": "webpack --progress --config webpack.config.dev.js --watch",
+    "serve": "nodemon app",
+    "start": "concurrently \"yarn watch\" \"yarn serve\""
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "morgan": "^1.10.0",
+    "pug": "^3.0.2"
   }
 }
