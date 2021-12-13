@@ -22,6 +22,14 @@ app.get('/', (req, res) => {
     res.render('pages/home')
 })
 
+app.get('/collection', (req, res) => {
+    res.render('pages/collection')
+})
+
+app.get('/about', (req, res) => {
+    res.render('pages/about')
+})
+
 // Server Listening
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}; Press Ctrl+C to terminate...`);
