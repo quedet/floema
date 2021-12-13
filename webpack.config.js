@@ -3,6 +3,7 @@ const Webpack = require('webpack')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const TerserWebpackPlugin = require('terser-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 
 const IS_DEVELOPMENT = process.env.NODE_ENv === 'development'
 
@@ -44,7 +45,8 @@ module.exports = {
                     to: ''
                 }
             ]
-        })
+        }),
+        new CleanWebpackPlugin
     ],
     module: {
         rules: [
